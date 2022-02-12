@@ -1,7 +1,23 @@
+import React, { useState } from 'react';
+
+
 import './App.css';
 
 
+import Axios from 'axios';
+
+
 function App() {
+
+  // Hooks 
+
+  const [NameProducto, setNameProducto] = useState('');
+
+  const handleNameProducto = (e) => {
+    setNameProducto(e.target.value);
+  }
+
+  const submitProducto = () => {};
 
   return (
     <div className = 'App'>
@@ -13,10 +29,11 @@ function App() {
               type = 'text' 
               name = 'nombreProducto' 
               placeholder = 'Red Bull 0.3L' 
-              is required>
-            </input>
-
-          <button> Buscar </button>
+              is required
+              minLength = '2'
+              onChange = {handleNameProducto}
+            />
+          <button onClick = {submitProducto} > Buscar </button>
         </div>
 
     </div>
