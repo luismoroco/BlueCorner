@@ -20,4 +20,23 @@ router.get('/testing', (req, res) => {
 
 });
 
+
+router.get('/stored', (req, res) => {
+
+    conex.query("call GetAllProductos()", function(err, rows) {
+        if ( err ) {
+            console.log( err );
+            return;
+        } else {
+            console.log( rows );
+        }
+    });
+
+    res.send('HECHO');
+
+});
+
+
+
+
 module.exports = router;
