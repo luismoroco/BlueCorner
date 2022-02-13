@@ -11,3 +11,5 @@ router.post('/endpoint/save', (req, res) => {
         console.log(res);
     });
 });
+
+module.exports = router;
