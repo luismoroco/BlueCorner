@@ -4,25 +4,31 @@ import './App.css';
 
 import Axios from 'axios';
 
-function App() {
+import Header from './components/header/Header';
 
+function App() {
   const [NameProducto, setNameProducto] = useState('');
 
   const handleNameProducto = (e) => {
     setNameProducto(e.target.value);
-  }
+  };
 
-  const submitProducto = () => {};
+  const submitProducto = () => {
+    Axios
+      .post('http://localhost:5000/endpoint/save', {NameProducto : NameProducto})
+      .then(() => alert('SE INSERTÓ :V'))
+      .catch((err) => {console.error(err)});
+  };
 
   return (
     <div className = 'App'>
-        <h1> Hello World! </h1>
+        <Header prop = {"Productos"}/>
 
         <div className = 'form'>
           <label> Nombre : </label>
             <input 
               type = 'text' 
-              name = 'nombreProducto' 
+              name = 'NameProducto' 
               placeholder = 'Red Bull 0.3L' 
               is required
               minLength = '2'
