@@ -13,29 +13,32 @@ function App() {
     setNameProducto(e.target.value);
   };
 
-  const submitProducto = () => {
+  const submitProducto = (e) => {
     Axios
       .post('http://localhost:5000/endpoint/save', {NameProducto : NameProducto})
       .then(() => alert('SE INSERTÓ :V'))
       .catch((err) => {console.error(err)});
+      
+      e.preventDefault();
+      setNameProducto('');
   };
 
   return (
     <div className = 'App'>
+      
         <Header prop = {"Productos"}/>
 
-        <div className = 'form'>
-          <label> Nombre : </label>
-            <input 
-              type = 'text' 
-              name = 'NameProducto' 
-              placeholder = 'Red Bull 0.3L' 
-              is required
-              minLength = '2'
-              onChange = {handleNameProducto}
-            />
-          <button onClick = {submitProducto} > Buscar </button>
-        </div>
+        <form onSubmit = {submitProducto}>
+            <label> Nombre : </label>
+              <input
+                  type = "text"
+                  value = {NameProducto}
+                  onChange = {handleNameProducto}
+                  required
+                  placeholder = 'Red Bull 0.3L'
+                  minLength ='2'
+              />
+        </form>
 
     </div>
   );
