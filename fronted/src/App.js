@@ -1,15 +1,10 @@
 import React, { useState } from 'react';
 
-
 import './App.css';
-
 
 import Axios from 'axios';
 
-
 function App() {
-
-  // Hooks 
 
   const [NameProducto, setNameProducto] = useState('');
 
@@ -38,7 +33,6 @@ function App() {
 
     </div>
   );
-  
 }
 
 export default App;

@@ -1,9 +1,7 @@
 const conex = require('../db/config');
 
 class Producto {
-
     static getByid( idProducto ) {
-
         return new Promise ((resolve, reject) => {
             conex.query("call getProductoById(?)", [idProducto], function(err, rows) {
                 if ( err ) {
@@ -19,7 +17,6 @@ class Producto {
     };
 
     static getLabelByid( idProducto ) {
-
         return new Promise ((resolve, reject) => {
             conex.query("call getLabelsById(?)", [idProducto], function(err, rows) {
                 if ( err ) {
@@ -31,11 +28,9 @@ class Producto {
                 }
             });  
         });  
-
     };
 
     static getAll( ) {
-
         return new Promise ((resolve, reject) => {
             conex.query("call GetAllProductos()", function(err, rows) {
                 if ( err ) {
@@ -47,11 +42,9 @@ class Producto {
                 }
             });
         });
-
     };
 
     static deleteByid( idProducto, newLabel ) {
-
         return new Promise ((resolve, reject) => {
             conex.query("call delete_Producto(?, ?)", [idProducto, newLabel], function(err, rows) {
                 if ( err ) {
@@ -63,11 +56,9 @@ class Producto {
                 }
             });
         });
-
     };
 
     static addLabel( idProducto ) {
-
         return new Promise ((resolve, reject) => {
             conex.query("call update_etiquetas(?, ?)", [idProducto], function(err, rows) {
                 if ( err ) {
@@ -79,11 +70,9 @@ class Producto {
                 }
             });
         });
-
     };
 
     static deleteLabel( idProducto ) {
-
         return new Promise ((resolve, reject) => {
             conex.query("call delete_etiquetas(?)", [idProducto], function(err, rows) {
                 if ( err ) {
@@ -95,7 +84,6 @@ class Producto {
                 }
             });
         });
-
     };
 
 };

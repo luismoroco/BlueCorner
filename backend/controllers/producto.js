@@ -1,8 +1,6 @@
 const productoModel = require('../models/producto');
 
-
 class Producto {
-
     static async getByid( req, res ) {
 
         // 

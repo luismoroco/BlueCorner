@@ -1,12 +1,9 @@
 const express = require ('express');
 const router = express.Router();
 
-
 const conex = require('../db/config');
 
-
 router.get('/testing', (req, res) => {
-
     conex.query('SELECT * FROM Productos', function(err, rows){
         if (err) {
             console.log("FATAL :'V", err);
@@ -20,9 +17,7 @@ router.get('/testing', (req, res) => {
 
 });
 
-
 router.get('/stored', (req, res) => {
-
     conex.query("call GetAllProductos()", function(err, rows) {
         if ( err ) {
             console.log( err );
@@ -35,8 +30,5 @@ router.get('/stored', (req, res) => {
     res.send('HECHO');
 
 });
-
-
-
 
 module.exports = router;
