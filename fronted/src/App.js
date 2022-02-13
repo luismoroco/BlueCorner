@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './App.css';
 
@@ -8,10 +8,21 @@ import Header from './components/header/Header';
 
 function App() {
   const [NameProducto, setNameProducto] = useState('');
+  const [listProductos, setListProductos] = useState([]);
+
+  useEffect(() => {
+    Axios
+      .get('http://localhost:5000/endpoint/getProductos')
+      .then((response) => {setListProductos(response.data)});
+  }, []);
 
   const handleNameProducto = (e) => {
     setNameProducto(e.target.value);
   };
+
+  const refreshPage = () => {
+    window.location.reload();
+  }
 
   const submitProducto = (e) => {
     Axios
@@ -21,6 +32,7 @@ function App() {
       
       e.preventDefault();
       setNameProducto('');
+      refreshPage();
   };
 
   return (
@@ -39,6 +51,16 @@ function App() {
                   minLength ='2'
               />
         </form>
+
+        <ol>
+            {
+              listProductos.map((e) => {
+                return (
+                  <h5> ID: {e.Id_producto}  |  NM: {e.Nombre} </h5>
+                );
+              })
+            }
+        </ol>
 
     </div>
   );
