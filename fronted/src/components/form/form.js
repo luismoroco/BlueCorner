@@ -51,13 +51,14 @@ export const FormProduct = () => {
                 <AddName setNameProducto = { setNameProducto }/>
             </form>
             
+            <p> Etiquetas </p>
             <AddEtiqueta setEtiquetas = { setEtiquetas }/>
             <ol>
                     {
                         Etiquetas.map((e) => {
                             return (
                                 <>
-                                    <button onClick = {() => handleRemoveItem(e)}> Borrar </button>
+                                    <button onClick = {() => handleRemoveItem(e)}> X </button>
                                     <h5 key = {e}> {e} </h5>
                                 </>
                             );

@@ -1,0 +1,10 @@
+h1 {
+    text-align: center;
+    font-size: 60px;
+    color: rgb(179, 50, 50);
+    border: rgba(57, 57, 117, 0.527) 67px;
+}
+
+.Header {
+    border: blueviolet;
+}

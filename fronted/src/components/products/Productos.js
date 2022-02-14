@@ -38,6 +38,8 @@ export const Productos = ( ) => {
     };
 
     return (
+        <>
+        <h2> Productos </h2>
         <ol>
             {
               listProductos.map((e) => {
@@ -45,14 +47,13 @@ export const Productos = ( ) => {
                   <>
                     <h5 key = { e.Id_producto }> ID: { e.Id_producto }  -----  NM: { e.Nombre } </h5>
                     <button onClick = {() => {deleteProducto(e.Id_producto)}} > Delete </button>
-                    <input type = 'text' id = 'UpdateNameProducto'/>
-                    <button> Update </button>
                     <ProductLabel idProducto = { e.Id_producto }/>
                   </>
                 );
               })   
             }
         </ol>
+        </>
     );
 };
 

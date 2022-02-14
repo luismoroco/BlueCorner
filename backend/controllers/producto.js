@@ -21,20 +21,15 @@
 const productoModel = require('../models/producto');
 
 class Producto {
-
     static async addNew(req, res) {
         const { NameProducto, ...listEtiquetas} = req.body;
-        let index = await productoModel.addProductoId(NameProducto);
-
-        console.log('AAAAAAAAAAAAAAAAAAAAAAA', index);
+        await productoModel.saveNewProducto(NameProducto);
+        const index = await productoModel.getIdByName(NameProducto);
         
-        /*
-        for (let i = 0; i < listEtiquetas.lenght; i++){
-            console.log('GAAAAAAAAAAAAAAAAAAAAAA');
-            await productoModel.addLabel(index[0], listEtiquetas[i]);
+        for (let i = 0; i < listEtiquetas.lisEtiquetas.length; i++){
+            productoModel.addLabel(index, listEtiquetas.lisEtiquetas[i]);
         }
         res.send('OK');
-        */
     };
 
     static async deleteById(req, res) {

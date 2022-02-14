@@ -8,22 +8,22 @@
 *   - Usaremos Proptypes para asegurarnos de recibir un string y que exista
 */
 
-
 import React from "react";
+
+import './Header.css'
 
 import PropTypes from 'prop-types';
 
 const Header = ({prop}) => {
     return (
         <>
-            <h1 className = 'text-center'> { prop } </h1>
+            <h1> { prop } </h1>
         </>
     );
 };
 
 Header.propTypes = {
     Header : PropTypes.string.isRequired
-
 };
 
 export default Header;

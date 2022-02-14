@@ -1,5 +1,5 @@
 /*
-*   @Footer COmponente Foot
+*   @Footer Componente Foot
 *   @puthor  Luis Moroco
 *   @versión  0.1
 * 
@@ -14,11 +14,9 @@ import PropTypes from 'prop-types';
 
 const Footer = ({prop}) => {
   return (
-    <footer className = 'footer'>
       <div className = 'container'>
         <span className = 'copyright'>&copy; {prop} </span>
       </div>
-    </footer>
   );
 };
 

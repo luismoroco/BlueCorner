@@ -12,8 +12,8 @@ export const AddName = ({ setNameProducto }) => {
 
     return (
         <>
-                <label> Nombre : </label>
-                <input
+                <p> Nombre </p>
+                <input 
                     type = 'text'
                     value = { inputValue }
                     onChange = { handleInputChangue }

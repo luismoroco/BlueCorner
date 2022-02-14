@@ -9,26 +9,25 @@
 *   @params  {Footer} : devolverá un componene tipo Foot con el contenido del prop.
 *   
 *   App inicializará todos nuestros componentes.
-*
 */
 
-import React, { useState } from 'react';
-
-import './App.css';
+import React from 'react';
 
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import Productos from './components/products/Productos';
 import FormProduct from './components/form/form';
 
+import './App.css'
+
 function App() {
   return (
-    <div className = 'App'>
+    <>  
         <Header prop = "Productos"/>
           <FormProduct/>
           <Productos/>
         <Footer prop = "Prueba Técnica para @BlueCorner Inc."/>
-    </div>
+    </>
   );
 }
 

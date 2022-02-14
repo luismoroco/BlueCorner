@@ -16,13 +16,13 @@ const conex = require('../db/config');
 
 class Producto {
 
-    static addProductoId(nameProducto) {
+    static saveNewProducto(nameProducto) {
         return new Promise ((resolve, reject) => {
-            conex.query("call SaveNewProductoId(?)", [nameProducto], function(err, rows) {
+            conex.query("call SaveNewProducto(?)", [nameProducto], function(err, rows) {
                 if ( err ) {
-                    return reject([]);
+                    reject([]);
                 } else {
-                    return resolve(rows);
+                    resolve(rows);
                 }
             });  
         }); 
@@ -32,10 +32,8 @@ class Producto {
         return new Promise ((resolve, reject) => {
             conex.query("call getLabelsById(?)", [idProducto], function(err, rows) {
                 if (err) {
-                    console.log( err );
                     return reject([]);
                 } else {
-                    console.log(rows);
                     return resolve(rows);
                 }
             });  
@@ -58,16 +56,37 @@ class Producto {
         return new Promise ((resolve, reject) => {
             conex.query("call delete_Producto(?)", [idProducto], function(err, rows) {
                 if (err) {
-                    console.log(err);
-                    return reject([]);
+                    reject([]);
                 } else {
-                    console.log(rows);
-                    return resolve(rows);
+                    resolve(rows);
                 }
             });
         });
     };
-    
+
+    static getIdByName(NameProducto) {
+        return new Promise ((resolve, reject) => {
+            conex.query("call GetIdByName(?)", [NameProducto], function(err, rows) {
+                if (err) {
+                    return reject([]);
+                } else {
+                    return resolve(rows[0][0].Id_producto);
+                }
+            });  
+        });  
+    };
+
+    static addLabel(idProducto, NameProducto) {
+        return new Promise ((resolve, reject) => {
+            conex.query("call update_etiquetas(?,?)", [idProducto, NameProducto], function(err, rows) {
+                if (err) {
+                    reject([]);
+                } else {
+                    resolve(rows);
+                }
+            });  
+        });  
+    };
 };
 
 module.exports = Producto;
