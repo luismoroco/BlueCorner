@@ -1,8 +1,13 @@
 const productoModel = require('../models/producto');
 
 class Producto {
-    static async getByid( req, res ) {
+    static async getByid(req, res) {
+    };
 
+    static async deleteById(req, res) {
+        const {idProducto} = req.params;
+        await productoModel.deleteByid(idProducto);
+        res.send('OK');
     };
 
     static async getAll(req, res) {
@@ -16,18 +21,11 @@ class Producto {
         res.send('OK');
     };
 
-
     static async addLabel( req, res ) {
-
-        //
-
-    } 
+    };
 
     static async deleteLabel( req, res ) { 
-
-        //
-
-    }
+    };
 
 };
 

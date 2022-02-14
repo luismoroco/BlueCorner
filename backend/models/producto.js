@@ -54,12 +54,12 @@ class Producto {
         });
     };
 
-    static deleteByid(idProducto, newLabel) {
+    static deleteByid(idProducto) {
         return new Promise ((resolve, reject) => {
-            conex.query("call delete_Producto(?, ?)", [idProducto, newLabel], function(err, rows) {
+            conex.query("call delete_Producto(?)", [idProducto], function(err, rows) {
                 if (err) {
                     console.log(err);
-                    return reject( [] );
+                    return reject([]);
                 } else {
                     console.log(rows);
                     return resolve(rows);

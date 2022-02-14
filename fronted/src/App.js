@@ -36,6 +36,13 @@ function App() {
       refreshPage();
   };
 
+  const deleteReview = (idProducto) => {
+    Axios
+      .delete(`http://localhost:5000/endpoint/delete/${idProducto}`)
+      .then(() => alert('succefull'))
+      .catch((err) => {console.error(err)});
+  }
+
   return (
     <div className = 'App'>
         <Header prop = {"Productos"}/>
@@ -58,7 +65,12 @@ function App() {
             {
               listProductos.map((e) => {
                 return (
-                  <h5> ID: {e.Id_producto}  |  NM: {e.Nombre} </h5>
+                  <>
+                    <h5> ID: {e.Id_producto}  -------  NM: {e.Nombre} </h5>
+                    <button onClick = {() => {deleteReview(e.Id_producto)}} > Delete </button>
+                    <input type = 'text' id = 'UpdateNameProducto'/>
+                    <button> Update </button>
+                  </>
                 );
               })
             }
