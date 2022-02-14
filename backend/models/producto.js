@@ -1,10 +1,24 @@
+/*
+*   @Producto  Modelo de Productos
+*   @puthor  Luis Moroco
+*   @versión  0.1
+* 
+*   @params  {Integer} : idProducto - Identificador único de objetos recibidos del Fronted.
+*   @params  {String} : NameProducto - Nombre para Buscar, agregar y buscar elementos en la base de datos.
+*
+*   Funciones: 
+*       - Todas las funciones utilizan procedimientos almacenados, para proteger las sentencias y poder usar promesas.
+*       - La estructura y ejemplo de cada una de ellas esta explicada en ./db/dbModel.sql.
+*       - Todas devuelven una respuesta de la base de datos.
+*/
+
 const conex = require('../db/config');
 
 class Producto {
 
-    static addProducto(nameProducto) {
+    static addProductoId(nameProducto) {
         return new Promise ((resolve, reject) => {
-            conex.query("call SaveNewProducto(?)", [nameProducto], function(err, rows) {
+            conex.query("call SaveNewProductoId(?)", [nameProducto], function(err, rows) {
                 if ( err ) {
                     return reject([]);
                 } else {
@@ -12,20 +26,6 @@ class Producto {
                 }
             });  
         }); 
-    };
-
-    static getByid(idProducto) {
-        return new Promise ((resolve, reject) => {
-            conex.query("call getProductoById(?)", [idProducto], function(err, rows) {
-                if ( err ) {
-                    console.log( err );
-                    return reject([]);
-                } else {
-                    console.log("CHUPEEKING", rows);
-                    return resolve(rows);
-                }
-            });  
-        });  
     };
 
     static getLabelByid(idProducto) {
@@ -62,34 +62,6 @@ class Producto {
                     return reject([]);
                 } else {
                     console.log(rows);
-                    return resolve(rows);
-                }
-            });
-        });
-    };
-
-    static addLabel(idProducto) {
-        return new Promise ((resolve, reject) => {
-            conex.query("call update_etiquetas(?, ?)", [idProducto], function(err, rows) {
-                if ( err ) {
-                    console.log( err );
-                    return reject( [] );
-                } else {
-                    console.log( rows );
-                    return resolve(rows);
-                }
-            });
-        });
-    };
-
-    static deleteLabel(idProducto) {
-        return new Promise ((resolve, reject) => {
-            conex.query("call delete_etiquetas(?)", [idProducto], function(err, rows) {
-                if ( err ) {
-                    console.log( err );
-                    return reject( [] );
-                } else {
-                    console.log( rows );
                     return resolve(rows);
                 }
             });

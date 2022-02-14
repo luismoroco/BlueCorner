@@ -1,3 +1,16 @@
+/*
+*   @Producto  Componente Producto
+*   @puthor  Luis Moroco
+*   @versión  0.1
+* 
+*   Hooks :
+*       - [listProductos, setListProductos] = guardará nustros productos
+*
+*   - useEffect : para solo alterar nuestra lista cuando cambie
+*   - deleteProducto : recibirá el 'idProducto'(int) y enviará el 'id' ala ruta delete, al backend, y será eliminada
+*   - Mapeamos nuestros productos por ID y Nombre, junto con 'productLabel' que mapeará sus etiquetas
+*/
+
 import React, {useEffect, useState} from 'react'
 
 import Axios from 'axios';

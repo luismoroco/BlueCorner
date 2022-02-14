@@ -174,6 +174,30 @@ DELIMITER ;
 call blue_corner.getLabelsById(1);
 
 
+---------------- GUARDAR PRODUCTO Y OBTENER ID
+
+USE `blue_corner`;
+DROP procedure IF EXISTS `SaveNewProductoId`;
+
+DELIMITER $$
+USE `blue_corner`$$
+CREATE PROCEDURE `SaveNewProductoId` (NombreProducto VARCHAR(50))
+BEGIN
+	INSERT INTO Productos(Nombre)
+    VALUES (NombreProducto);
+    
+    SELECT Id_producto
+    FROM Productos 
+    WHERE Nombre = NombreProducto;
+    
+END$$
+
+DELIMITER ;
+
+-------- EJEMPLO DE USO 
+call blue_corner.SaveNewProductoId('Sapolio 1L');
+
+
 INSERT INTO Productos(Nombre)
 values("Lejía Patito");
 

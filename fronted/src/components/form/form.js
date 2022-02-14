@@ -1,3 +1,19 @@
+/*
+*   @Forms  Componente principal
+*   @puthor  Luis Moroco
+*   @versión  0.1
+* 
+*   Hooks :
+*       - [NameProducto, setNameProducto] = guardará el nombre del producto
+*       - [Etiquetas, setEtiquetas] = guardará las etiquetas de cada producto
+*
+*   - handleRemoveItem : usará 'fiter' para remover de la lista de etiquetas a 'e'
+*   - submitProducto : enviará [NameProducto(string) && listEtiquetas(array)] a la ruta '../save' en el backend, para ser guardado
+*   - retornaremos un form con un componente 'Addname' que actualizará el contenido de 'NameProducto'
+*   - 'AddEtiqueta' procesará la lista dinámica de 'Etiquetas' para ser guardada.
+*   - usaremos (map), para mostrar todos nuestras etiquetas
+*/
+
 import React, { useState } from 'react';
 
 import AddEtiqueta from '../labels/AddEtiqueta';
@@ -19,12 +35,13 @@ export const FormProduct = () => {
 
     const submitProducto = (e) => {
         Axios
-        .post('http://localhost:5000/endpoint/save', {NameProducto : NameProducto})
+        .post('http://localhost:5000/endpoint/save', {NameProducto : NameProducto, lisEtiquetas : Etiquetas})
         .then(() => alert('succefull'))
         .catch((err) => {console.error(err)});
         
         e.preventDefault();
         setNameProducto('');
+        setEtiquetas([]);
         refreshPage();
     };
 
