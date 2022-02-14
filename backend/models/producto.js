@@ -1,14 +1,14 @@
 const conex = require('../db/config');
 
 class Producto {
-    static getByid( idProducto ) {
+    static getByid(idProducto) {
         return new Promise ((resolve, reject) => {
             conex.query("call getProductoById(?)", [idProducto], function(err, rows) {
                 if ( err ) {
                     console.log( err );
-                    return reject( [] );
+                    return reject([]);
                 } else {
-                    console.log( rows );
+                    console.log("CHUPEEKING", rows);
                     return resolve(rows);
                 }
             });  
@@ -16,42 +16,42 @@ class Producto {
 
     };
 
-    static getLabelByid( idProducto ) {
+    static getLabelByid(idProducto) {
         return new Promise ((resolve, reject) => {
             conex.query("call getLabelsById(?)", [idProducto], function(err, rows) {
-                if ( err ) {
+                if (err) {
                     console.log( err );
-                    return reject( [] );
+                    return reject([]);
                 } else {
-                    console.log( rows );
+                    console.log(rows);
                     return resolve(rows);
                 }
             });  
         });  
     };
 
-    static getAll( ) {
+    static getAll() {
         return new Promise ((resolve, reject) => {
             conex.query("call GetAllProductos()", function(err, rows) {
-                if ( err ) {
+                if (err) {
                     console.log( err );
-                    return reject( [] );
+                    return reject([]);
                 } else {
-                    console.log( rows );
+                    console.log(rows);
                     return resolve(rows);
                 }
             });
         });
     };
 
-    static deleteByid( idProducto, newLabel ) {
+    static deleteByid(idProducto, newLabel) {
         return new Promise ((resolve, reject) => {
             conex.query("call delete_Producto(?, ?)", [idProducto, newLabel], function(err, rows) {
-                if ( err ) {
-                    console.log( err );
+                if (err) {
+                    console.log(err);
                     return reject( [] );
                 } else {
-                    console.log( rows );
+                    console.log(rows);
                     return resolve(rows);
                 }
             });

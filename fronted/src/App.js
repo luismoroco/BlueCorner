@@ -35,6 +35,8 @@ function App() {
       refreshPage();
   };
 
+  console.log('LINEA 38', listProductos);
+
   return (
     <div className = 'App'>
       
