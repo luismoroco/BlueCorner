@@ -6,6 +6,7 @@ import Axios from 'axios';
 
 import Header from './components/header/Header';
 import Etiquetas from './components/Etiqueta/Etiqueta';
+import Footer from './components/footer/Footer';
 
 function App() {
   const [NameProducto, setNameProducto] = useState('');
@@ -68,7 +69,7 @@ function App() {
               listProductos.map((e) => {
                 return (
                   <>
-                    <h5> ID: {e.Id_producto}  -------  NM: {e.Nombre} </h5>
+                    <h5> ID: {e.Id_producto}  -----  NM: {e.Nombre} </h5>
                     <button onClick = {() => {deleteReview(e.Id_producto)}} > Delete </button>
                     <input type = 'text' id = 'UpdateNameProducto'/>
                     <button> Update </button>
@@ -78,6 +79,7 @@ function App() {
             }
         </ol>
 
+        <Footer prop = {"Prueba Técnica para @BlueCorner Inc."}/>
     </div>
   );
 }

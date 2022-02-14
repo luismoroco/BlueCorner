@@ -68,7 +68,7 @@ class Producto {
         });
     };
 
-    static addLabel( idProducto ) {
+    static addLabel(idProducto) {
         return new Promise ((resolve, reject) => {
             conex.query("call update_etiquetas(?, ?)", [idProducto], function(err, rows) {
                 if ( err ) {
@@ -82,7 +82,7 @@ class Producto {
         });
     };
 
-    static deleteLabel( idProducto ) {
+    static deleteLabel(idProducto) {
         return new Promise ((resolve, reject) => {
             conex.query("call delete_etiquetas(?)", [idProducto], function(err, rows) {
                 if ( err ) {
