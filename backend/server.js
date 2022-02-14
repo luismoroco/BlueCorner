@@ -12,8 +12,7 @@ App.use(express.json());
 App.use(bodyParser.urlencoded({ extended: true }));
 App.use(express.urlencoded({ extended: false }));
 
-App.use('/', require('./routes/get.js'));
-App.use('/', require('./routes/post.js'));
+App.use('/', require('./routes/routers'));
 
 App.get('/', (req, res) => {
     res.send('Main Page works GAA');

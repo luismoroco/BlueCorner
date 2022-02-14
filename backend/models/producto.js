@@ -1,6 +1,19 @@
 const conex = require('../db/config');
 
 class Producto {
+
+    static addProducto(nameProducto) {
+        return new Promise ((resolve, reject) => {
+            conex.query("call SaveNewProducto(?)", [nameProducto], function(err, rows) {
+                if ( err ) {
+                    return reject([]);
+                } else {
+                    return resolve(rows);
+                }
+            });  
+        }); 
+    };
+
     static getByid(idProducto) {
         return new Promise ((resolve, reject) => {
             conex.query("call getProductoById(?)", [idProducto], function(err, rows) {
@@ -82,7 +95,7 @@ class Producto {
             });
         });
     };
-
+    
 };
 
 module.exports = Producto;

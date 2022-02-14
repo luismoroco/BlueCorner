@@ -5,16 +5,15 @@ class Producto {
 
     };
 
-    static async getAll( req, res) {
+    static async getAll(req, res) {
         const ListProductos = await productoModel.getAll();
-        console.log('CHUPEEETIN!!!!!', ListProductos);
         res.send(ListProductos[0]);
     };
 
-    static async( req, res) {
-
-        //
-
+    static async addNew( req, res) {
+        const {NameProducto} = req.body;
+        await productoModel.addProducto(NameProducto);
+        res.send('OK');
     };
 
 
