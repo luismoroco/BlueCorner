@@ -5,6 +5,12 @@ import AddEtiqueta from './AddEtiqueta';
 export const Etiquetas = () => {
     const [Etiquetas, setEtiquetas] = useState([]);
 
+    const handleRemoveItem = e => {
+        const listTemp = [...Etiquetas];
+        listTemp.splice(e, 1);
+        setEtiquetas(listTemp);
+    };
+
     return (
         <>
             <h2> Etiquetas </h2>
@@ -14,7 +20,10 @@ export const Etiquetas = () => {
                 {
                     Etiquetas.map((e) => {
                         return (
-                            <h5> {e} </h5>
+                            <>
+                                <button onClick = {() => handleRemoveItem(e)}> Borrar </button>
+                                <h5> {e} </h5>
+                            </>
                         );
                     })
                 }

@@ -41,6 +41,8 @@ function App() {
       .delete(`http://localhost:5000/endpoint/delete/${idProducto}`)
       .then(() => alert('succefull'))
       .catch((err) => {console.error(err)});
+
+      refreshPage();
   }
 
   return (
