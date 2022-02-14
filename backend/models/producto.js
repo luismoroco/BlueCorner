@@ -13,7 +13,6 @@ class Producto {
                 }
             });  
         });  
-
     };
 
     static getLabelByid(idProducto) {
@@ -34,10 +33,8 @@ class Producto {
         return new Promise ((resolve, reject) => {
             conex.query("call GetAllProductos()", function(err, rows) {
                 if (err) {
-                    console.log( err );
                     return reject([]);
                 } else {
-                    console.log(rows);
                     return resolve(rows);
                 }
             });
