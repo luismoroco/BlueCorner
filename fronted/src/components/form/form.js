@@ -41,7 +41,7 @@ export const FormProduct = () => {
                             return (
                                 <>
                                     <button onClick = {() => handleRemoveItem(e)}> Borrar </button>
-                                    <h5 key = {e} > {e} </h5>
+                                    <h5 key = {e}> {e} </h5>
                                 </>
                             );
                         })

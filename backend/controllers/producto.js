@@ -33,7 +33,8 @@ class Producto {
 
     };
 
-    static async deleteLabel( req, res ) { 
+    static async deleteLabel( req, res ) {
+         
     };
 
 };
