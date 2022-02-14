@@ -4,6 +4,8 @@ import Axios from 'axios';
 
 import ProductLabel from './ProductLabel';
 
+import refreshPage from '../../functions/functions';
+
 export const Productos = ( ) => {
     const [listProductos, setListProductos] = useState([]);
 
@@ -12,10 +14,6 @@ export const Productos = ( ) => {
           .get('http://localhost:5000/endpoint/getProductos')
           .then((response) => {setListProductos(response.data)});
     }, []);
-
-    const refreshPage = () => {
-        window.location.reload();
-    };
 
     const deleteProducto = (idProducto) => {
         Axios

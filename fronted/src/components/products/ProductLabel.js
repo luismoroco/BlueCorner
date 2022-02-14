@@ -33,6 +33,6 @@ export const ProductLabel = ({ idProducto }) => {
 
 ProductLabel.propTypes = {
     idProducto : PropTypes.number.isRequired
-}
+};
 
 export default ProductLabel;
