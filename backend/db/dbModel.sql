@@ -114,25 +114,6 @@ DELIMITER ;
 call blue_corner.update_etiquetas(1, 'Limpieza');
 
 
----------------- ELIMINAR TODAS LAS ETIQUETAS DE UN PRODUCTO
-
-USE `blue_corner`;
-DROP procedure IF EXISTS `delete_etiquetas`;
-
-DELIMITER $$
-USE `blue_corner`$$
-CREATE PROCEDURE `delete_etiquetas` (IdProducto INT(11))
-BEGIN
-	DELETE 
-    FROM Etiquetas 
-    WHERE Id_producto = IdProducto;
-END$$
-
-DELIMITER ;
-
--------- EJEMPLO DE USO 
-call blue_corner.delete_etiquetas(5);
-
 
 ---------------- OBTENER PRODUCTO POR ID
 
@@ -174,28 +155,27 @@ DELIMITER ;
 call blue_corner.getLabelsById(1);
 
 
----------------- GUARDAR PRODUCTO Y OBTENER ID
+---------------- OBTENER ID DE UN PRODUCTO
 
 USE `blue_corner`;
-DROP procedure IF EXISTS `SaveNewProductoId`;
-
+DROP procedure IF EXISTS `GetIdByName`;
 DELIMITER $$
 USE `blue_corner`$$
-CREATE PROCEDURE `SaveNewProductoId` (NombreProducto VARCHAR(50))
+CREATE PROCEDURE `GetIdByName` (NombreProducto VARCHAR(50))
 BEGIN
-	INSERT INTO Productos(Nombre)
-    VALUES (NombreProducto);
-    
     SELECT Id_producto
     FROM Productos 
     WHERE Nombre = NombreProducto;
-    
 END$$
 
 DELIMITER ;
 
 -------- EJEMPLO DE USO 
-call blue_corner.SaveNewProductoId('Sapolio 1L');
+call blue_corner.GetIdByName('Lejía Patito');
+
+
+------------------------------------ DATOS DE ENTRADA ---------------------------------
+
 
 
 INSERT INTO Productos(Nombre)

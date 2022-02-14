@@ -53,18 +53,22 @@ export const FormProduct = () => {
             
             <p> Etiquetas </p>
             <AddEtiqueta setEtiquetas = { setEtiquetas }/>
-            <ol>
-                    {
-                        Etiquetas.map((e) => {
-                            return (
-                                <>
-                                    <button onClick = {() => handleRemoveItem(e)}> X </button>
-                                    <h5 key = {e}> {e} </h5>
-                                </>
-                            );
-                        })
-                    }
-            </ol>
+                <table>
+                    <tr>
+                        <th> Etiqueta </th>
+                        <th> Acción </th>
+                    </tr>
+                            {
+                                Etiquetas.map((e) => {
+                                    return (
+                                        <tr key = { e }>
+                                            <td> { e } </td>
+                                            <td> <button onClick = {() => handleRemoveItem(e)}> X </button> </td>
+                                        </tr>
+                                    );
+                                })
+                            }
+                </table>
         </>
     );
 };

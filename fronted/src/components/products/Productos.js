@@ -39,20 +39,25 @@ export const Productos = ( ) => {
 
     return (
         <>
-        <h2> Productos </h2>
-        <ol>
-            {
-              listProductos.map((e) => {
-                return (
-                  <>
-                    <h5 key = { e.Id_producto }> ID: { e.Id_producto }  -----  NM: { e.Nombre } </h5>
-                    <button onClick = {() => {deleteProducto(e.Id_producto)}} > Delete </button>
-                    <ProductLabel idProducto = { e.Id_producto }/>
-                  </>
-                );
-              })   
-            }
-        </ol>
+          <h2> Almacenados </h2>
+          <table>
+              <tr>
+                <th> Producto </th>
+                <th> Etiquetas </th>
+                <th> Accion </th> 
+              </tr>
+                      {
+                        listProductos.map((e) => {
+                          return (
+                            <tr  key = { e.Id_producto }>
+                              <td> { e.Nombre } </td>
+                              <td> <ProductLabel idProducto = { e.Id_producto }/> </td>
+                              <td> <button onClick = {() => {deleteProducto(e.Id_producto)}} > X </button> </td>
+                            </tr>
+                          );
+                        })   
+                      }
+          </table>
         </>
     );
 };

@@ -29,13 +29,12 @@ export const ProductLabel = ({ idProducto }) => {
 
     return (
         <>
-            <h2> Etiquetas Asociadas </h2>
             <ol>
                 {
                     listEtiquetasProducto.map((e) => {
                         return (
                             <>
-                                <h6 key = {e.Id_etiqueta}> { e.Nombre } </h6>
+                                { e.Nombre + ' ' } 
                             </>
                         );
                     })
