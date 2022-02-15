@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+    environment {
+            CI = 'true'
+        }
+
+    stages {
+        stage('Install') {
+            steps {
+                sh """
+                   date
+                   echo Iniciando instalación de depenencias en Fronted
+                   """
+
+                sh """ 
+                   cd /media/luismoroco/D/WORK/BlueCorner/fronted/
+                   sh yarn install
+                   """
+
+                sh """
+                   date
+                   echo Iniciando instalación de depenencias en Backend
+                   """
+
+                sh """ 
+                   cd /media/luismoroco/D/WORK/BlueCorner/backend/
+                   sh yarn install
+                   """
+            }
+        }
+    }
+}
