@@ -17,7 +17,7 @@
 
 ## Tecnologías adicionales 
 
-- Jest : Pruebas Unitarias 
+- Jest : Pruebas 
 - Selenium : Entorno de pruebas de Sotware
 - ChromeWebdriver : Controlador para Buscador
 - Express : Framework de desarrollo 
@@ -46,31 +46,31 @@ El proyecto consta de dos partes:
 - Fronted : Lado del cliente
 Ambos se comunican usando `Axios` y peticiones `HTTP`
 
-1. Clonar el repositorio 
+### 1. Clonar el repositorio 
 
 - Ejecutar `git clone https://github.com/luismoroco/BlueCorner.git` en cualquier fichero de la PC.
 
 - Luego `yarn install` o `npm install`
 
-1. Levantar la base datos
+### 2. Levantar la base datos
 
 - Ejecutar el script [Script.sql](https://github.com/luismoroco/BlueCorner/blob/main/backend/db/dbModel.sql) preferentemente en MySQL Workbench.
 - Las variables globales estan configuradas por defecto.
 
-2. Levantar el servidor del Backend
+### 3. Levantar el servidor del Backend
 
 - Ejecutaremos `cd backend`, para acceder al directorio del backend
 - Instaremos las dependecias Luego `yarn install` o `npm install`
 - Luego `nodemon server`, activar el servidor.
 
-3. Levantar el servidor del Fronted
+### 4. Levantar el servidor del Fronted
 
 - Volveremos al directorio pricipal con `cd ..` 
 - Entraremos al directorio del Fronted `cd fronted`
 - Instaremos las dependecias Luego `yarn install` o `npm install`
 - Activamos el servidor `yarn start` o `npm start`
 
-4. Testing
+### 5. Testing
 
 - Volveremos al directorio pricipal con `cd ..` 
 - Ejecutaremos las pruebas con `yarn run dev` o `npm run test`
