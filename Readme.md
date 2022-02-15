@@ -49,8 +49,7 @@ Ambos se comunican usando `Axios` y peticiones `HTTP`
 ### 1. Clonar el repositorio 
 
 - Ejecutar `git clone https://github.com/luismoroco/BlueCorner.git` en cualquier fichero de la PC.
-
-- Luego `yarn install` o `npm install`
+- Instalar las dependencias `yarn install` o `npm install`
 
 ### 2. Levantar la base datos
 
@@ -61,13 +60,13 @@ Ambos se comunican usando `Axios` y peticiones `HTTP`
 
 - Ejecutaremos `cd backend`, para acceder al directorio del backend
 - Instaremos las dependecias Luego `yarn install` o `npm install`
-- Luego `nodemon server`, activar el servidor.
+- Usamos `nodemon server`, activar el servidor.
 
 ### 4. Levantar el servidor del Fronted
 
 - Volveremos al directorio pricipal con `cd ..` 
 - Entraremos al directorio del Fronted `cd fronted`
-- Instaremos las dependecias Luego `yarn install` o `npm install`
+- Instaremos las dependecias con `yarn install` o `npm install`
 - Activamos el servidor `yarn start` o `npm start`
 
 ### 5. Testing
