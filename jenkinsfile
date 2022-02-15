@@ -10,7 +10,7 @@ pipeline {
                 sh 'date'
                 sh 'echo Iniciando instalación de depenencias en Fronted'
 
-                sh  'cd /media/luismoroco/D/WORK/BlueCorner/fronted/'
+                sh  'cd fronted/'
                 sh  'yarn install'
             }         
         }
@@ -19,7 +19,7 @@ pipeline {
                 sh 'date'
                 sh 'echo Iniciando instalación de depenencias en Backend'
 
-                sh  'cd /media/luismoroco/D/WORK/BlueCorner/backend/'
+                sh  'cd backend/'
                 sh  'yarn install'
             }         
         }
