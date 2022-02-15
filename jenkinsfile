@@ -38,7 +38,7 @@ pipeline {
                 sh 'date'
                 sh 'echo Iniciando el Fronted'
 
-                sh 'cd /media/luismoroco/D/WORK/BlueCorner/fronted/'
+                sh 'cd fronted/'
                 sh 'npm start'
             }         
         }
