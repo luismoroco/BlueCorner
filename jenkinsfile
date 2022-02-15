@@ -11,7 +11,7 @@ pipeline {
                 sh 'echo Iniciando instalación de depenencias en Fronted'
 
                 sh  'cd /media/luismoroco/D/WORK/BlueCorner/fronted/'
-                sh  'sh yarn install'
+                sh  'yarn install'
             }         
         }
         stage('Install Backend') {
@@ -19,8 +19,8 @@ pipeline {
                 sh 'date'
                 sh 'echo Iniciando instalación de depenencias en Backend'
 
-                sh  'cd /media/luismoroco/D/WORK/BlueCorner/backend/'
-                sh  'sh yarn install'
+                sh  '/media/luismoroco/D/WORK/BlueCorner/backend/'
+                sh  'yarn install'
             }         
         }
     }
