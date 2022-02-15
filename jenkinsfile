@@ -7,28 +7,20 @@ pipeline {
     stages {
         stage('Install Fronted') {
             steps {
-                sh """
-                   date
-                   echo Iniciando instalación de depenencias en Fronted
-                   """
+                sh 'date'
+                sh 'echo Iniciando instalación de depenencias en Fronted'
 
-                sh """ 
-                   cd /media/luismoroco/D/WORK/BlueCorner/fronted/
-                   sh yarn install
-                   """ 
+                sh  'cd /media/luismoroco/D/WORK/BlueCorner/fronted/'
+                sh  'sh yarn install'
             }         
         }
         stage('Install Backend') {
             steps {
-                sh """
-                   date
-                   echo Iniciando instalación de depenencias en Backend
-                   """
+                sh 'date'
+                sh 'echo Iniciando instalación de depenencias en Backend'
 
-                sh """ 
-                   cd /media/luismoroco/D/WORK/BlueCorner/backend/
-                   sh yarn install
-                   """
+                sh  'cd /media/luismoroco/D/WORK/BlueCorner/backend/'
+                sh  'sh yarn install'
             }         
         }
     }
