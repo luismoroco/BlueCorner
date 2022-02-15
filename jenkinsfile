@@ -38,7 +38,7 @@ pipeline {
                 sh 'date'
                 sh 'echo Iniciando el Fronted'
 
-                sh  'cd /BlueCorner/fronted/'
+                sh  'cd BlueCorner/fronted/'
                 sh  'yarn start'
             }         
         }
