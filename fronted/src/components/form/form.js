@@ -46,13 +46,14 @@ export const FormProduct = () => {
     };
 
     return (
-        <>
+        <>  
             <form onSubmit = { submitProducto }>
                 <AddName setNameProducto = { setNameProducto }/>
             </form>
             
             <p> Etiquetas </p>
             <AddEtiqueta setEtiquetas = { setEtiquetas }/>
+                <br/>
                 <table>
                     <tr>
                         <th> Etiqueta </th>

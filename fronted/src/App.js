@@ -24,7 +24,7 @@ function App() {
   return (
     <>  
         <Header prop = "Productos"/>
-          <FormProduct/>
+          <FormProduct/> 
           <Productos/>
         <Footer prop = "Prueba Técnica para @BlueCorner Inc."/>
     </>
