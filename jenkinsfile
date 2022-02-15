@@ -37,7 +37,7 @@ pipeline {
             steps {
                 sh 'date'
                 sh 'echo Iniciando el Fronted'
-                sh 'cd fronted/'
+                sh 'cd /media/luismoroco/D/WORK/BlueCorner/fronted/'
                 sh 'yarn start'
             }         
         }
