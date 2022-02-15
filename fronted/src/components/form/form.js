@@ -17,7 +17,6 @@
 import React, { useState } from 'react';
 
 import AddEtiqueta from '../labels/AddEtiqueta';
-import AddName from './addName';
 
 import Axios from 'axios';
 
@@ -45,10 +44,22 @@ export const FormProduct = () => {
         refreshPage();
     };
 
+    const handleInputChangue = (e) => {
+        setNameProducto(e.target.value);
+    };
+
     return (
         <>  
             <form onSubmit = { submitProducto }>
-                <AddName setNameProducto = { setNameProducto }/>
+            <p> Nombre </p>
+                <input 
+                    type = 'text'
+                    value = { NameProducto }
+                    onChange = { handleInputChangue }
+                    required
+                    placeholder = 'Red Bull 0.3L'
+                    minLength ='2'
+                /> 
             </form>
             
             <p> Etiquetas </p>
