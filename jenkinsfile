@@ -5,6 +5,15 @@ pipeline {
         }
 
     stages {
+        stage('Install') {
+            steps {
+                sh 'date'
+                sh 'echo Iniciando instalación de depenencias del Proyecto'
+
+                sh  'yarn install'
+            }         
+        }
+
         stage('Install Fronted') {
             steps {
                 sh 'date'
@@ -14,6 +23,7 @@ pipeline {
                 sh  'yarn install'
             }         
         }
+
         stage('Install Backend') {
             steps {
                 sh 'date'
@@ -33,6 +43,7 @@ pipeline {
                 sh  'nodemon server'
             }         
         }
+
         stage('Iniciando Fronted') {
             steps {
                 sh 'date'
@@ -41,6 +52,17 @@ pipeline {
                 sh 'cd fronted/'
                 sh 'npm start'
             }         
+        }
+
+        stage('Testing') {
+            steps {
+                sh 'date'
+                sh 'Inciando Pruebas'
+
+                sh 'yarn run test'
+
+                sh 'echo HECHO'
+            } 
         }
     }
 }
