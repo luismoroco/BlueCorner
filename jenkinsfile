@@ -5,35 +5,31 @@ pipeline {
         }
 
     stages {
-        stage('Install') {
-            parallel firstBranch: {
-                stage ('Starting Test') {
-                    steps {
-                        sh """
-                           date
-                           echo Iniciando instalación de depenencias en Fronted
-                           """
+        stage('Install Fronted') {
+            steps {
+                sh """
+                   date
+                   echo Iniciando instalación de depenencias en Fronted
+                   """
 
-                        sh """ 
-                           cd /media/luismoroco/D/WORK/BlueCorner/fronted/
-                           sh yarn install
-                           """
-                    }
-                }
-            }, secondBranch: {
-                stage ('Starting Test2') {
-                    steps {
-                        sh """ 
-                           cd /media/luismoroco/D/WORK/BlueCorner/backend/
-                           sh yarn install
-                           """
-                        sh """ 
-                           cd /media/luismoroco/D/WORK/BlueCorner/backend/
-                           sh yarn install
-                           """
-                    }
-                }
-            }
+                sh """ 
+                   cd /media/luismoroco/D/WORK/BlueCorner/fronted/
+                   sh yarn install
+                   """ 
+            }         
+        }
+        stage('Install Backend') {
+            steps {
+                sh """
+                   date
+                   echo Iniciando instalación de depenencias en Backend
+                   """
+
+                sh """ 
+                   cd /media/luismoroco/D/WORK/BlueCorner/backend/
+                   sh yarn install
+                   """
+            }         
         }
     }
 }
