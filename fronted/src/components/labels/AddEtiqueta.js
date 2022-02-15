@@ -37,6 +37,7 @@ export const AddEtiqueta = ({setEtiquetas}) => {
                 minLength = '2'
                 placeholder = 'Hogar, Limpieza'
             />
+            <button type = 'submit'> + </button> 
         </form>
     );
 };

@@ -23,31 +23,58 @@ const productoModel = require('../models/producto');
 class Producto {
     static async addNew(req, res) {
         const { NameProducto, ...listEtiquetas} = req.body;
-        await productoModel.saveNewProducto(NameProducto);
-        const index = await productoModel.getIdByName(NameProducto);
-        
+        try {
+            await productoModel.saveNewProducto(NameProducto);
+        } catch (e) {
+            console.log(e);
+        }
+
+        let index;
+        try {
+            index = await productoModel.getIdByName(NameProducto);
+        } catch (e) {
+            console.log(e);
+        }
+
         for (let i = 0; i < listEtiquetas.lisEtiquetas.length; i++){
-            productoModel.addLabel(index, listEtiquetas.lisEtiquetas[i]);
+            try {
+                await productoModel.addLabel(index, listEtiquetas.lisEtiquetas[i]);
+            } catch (e) {
+                console.log(e);
+            }
         }
         res.send('OK');
     };
 
     static async deleteById(req, res) {
         const { idProducto } = req.params;
-        await productoModel.deleteByid(idProducto);
-        res.send('OK');
+        try {
+            await productoModel.deleteByid(idProducto);
+            res.send('OK');
+        } catch (e) {
+            console.log(e);
+        }
     };
 
     static async getAll(req, res) {
-        const listProductos = await productoModel.getAll();
-        res.send(listProductos[0]);
+        try {
+            const listProductos = await productoModel.getAll();
+            res.send(listProductos[0]);
+        } catch (e) {
+            console.log(e);
+            res.send(['']);
+        }
     };
 
     static async getLabels(req, res) {
         const { idProducto } = req.params;
-        const listLabelsById = await productoModel.getLabelByid(idProducto);
-        console.log(listLabelsById);
-        res.send(listLabelsById[0]);
+        try {
+            const listLabelsById = await productoModel.getLabelByid(idProducto);
+            res.send(listLabelsById[0]);
+        } catch (e) {
+            console.log(e);
+            res.send(['']);
+        }
     };
 };
 

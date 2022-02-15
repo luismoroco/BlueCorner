@@ -59,7 +59,8 @@ export const FormProduct = () => {
                     required
                     placeholder = 'Red Bull 0.3L'
                     minLength ='2'
-                /> 
+                />
+                <button type = 'submit'> + </button> 
             </form>
             
             <p> Etiquetas </p>
