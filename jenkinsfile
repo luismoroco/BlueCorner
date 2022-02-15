@@ -19,7 +19,7 @@ pipeline {
                 sh 'date'
                 sh 'echo Iniciando instalación de depenencias en Backend'
 
-                sh  '/media/luismoroco/D/WORK/BlueCorner/backend/'
+                sh  'cd /media/luismoroco/D/WORK/BlueCorner/backend/'
                 sh  'yarn install'
             }         
         }
