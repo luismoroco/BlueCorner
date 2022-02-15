@@ -38,8 +38,7 @@ pipeline {
                 sh 'date'
                 sh 'echo Iniciando el Fronted'
 
-                sh  'cd fronted/'
-                sh  'yarn start'
+                sh  'cd /fronted/ && yarn start'
             }         
         }
 
