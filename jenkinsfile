@@ -23,5 +23,26 @@ pipeline {
                 sh  'yarn install'
             }         
         }
+
+        stage('Iniciando Backend') {
+            steps {
+                sh 'date'
+                sh 'echo Iniciando el Backend'
+
+                sh  'cd backend/'
+                sh  'nodemon server'
+            }         
+        }
+        stage('Iniciando Fronted') {
+            steps {
+                sh 'date'
+                sh 'echo Iniciando el Fronted'
+
+                sh  'cd fronted/'
+                sh  'yarn start'
+            }         
+        }
+
+
     }
 }
