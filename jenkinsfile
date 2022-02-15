@@ -38,6 +38,8 @@ pipeline {
                 sh 'date'
                 sh 'echo Iniciando el Fronted'
                 sh 'ls'
+                sh 'cd fronted'
+                sh 'ls'
             }         
         }
 
