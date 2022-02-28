@@ -1,13 +1,10 @@
-----------------------------------------  CREACIÓN DE BASE DE DATOS ----------------------------------------------------
-
+-- --------------------------------------  CREACIÓN DE BASE DE DATOS ----------------------------------------------------
 
 CREATE DATABASE blue_corner; 
 
 USE blue_corner;
 
-
------------------------------------------ CREACIÓN DE TABLAS -----------------------------------------------------------
-
+-- --------------------------------------- CREACIÓN DE TABLAS -----------------------------------------------------------
 
 -- TABLA DE PRODUCTOS (PK) = 1 
 
@@ -27,14 +24,11 @@ CREATE TABLE IF NOT EXISTS Etiquetas (
     FOREIGN KEY (Id_producto) REFERENCES Productos(Id_producto)
 );
 
-
-----------------------------------------  CREACIÓN DE MÉTODOS Y FUNCIONES ----------------------------------------------
+-- --------------------------------------  CREACIÓN DE MÉTODOS Y FUNCIONES ----------------------------------------------
 
 -- USARÉ PROCEDIMIENTOS ALMACENADOS PARA PODER TRABAJAR CON PROMESAS, Y NO EXPONER LAS SENTENCIAS
 
-
-
------------------- GUARDAR UN PRODUCTO
+-- ---------------- GUARDAR UN PRODUCTO
 
 USE `blue_corner`;
 DROP procedure IF EXISTS `SaveNewProducto`;
@@ -49,11 +43,11 @@ END$$
 
 DELIMITER ;
 
--------- EJEMPLO DE USO 
-call blue_corner.SaveNewProducto('JW RedL 0.7cl');
+-- EJEMPLO DE USO 
+-- call blue_corner.SaveNewProducto('JW RedL 0.7cl');
 
 
----------------- OBTENER TODOS LOS PRODUCTOS
+-- -------------- OBTENER TODOS LOS PRODUCTOS
 
 USE `blue_corner`;
 DROP procedure IF EXISTS `GetAllProductos`;
@@ -67,11 +61,11 @@ BEGIN
 END$$
 DELIMITER ;
 
--------- EJEMPLO DE USO 
-call blue_corner.GetAllProductos();
+-- ------ EJEMPLO DE USO 
+-- call blue_corner.GetAllProductos();
 
 
----------------- ELIMINAR PRODUCTO POR ID
+-- ------------- ELIMINAR PRODUCTO POR ID
 
 USE `blue_corner`;
 DROP procedure IF EXISTS `delete_Producto`;
@@ -91,11 +85,11 @@ END$$
 
 DELIMITER ;
 
--------- EJEMPLO DE USO 
-call blue_corner.delete_Producto(3);
+-- ------ EJEMPLO DE USO 
+-- call blue_corner.delete_Producto(3);
 
 
----------------- GUARDAR ETIQUETAS
+-- -------------- GUARDAR ETIQUETAS
 
 USE `blue_corner`;
 DROP procedure IF EXISTS `update_etiquetas`;
@@ -110,32 +104,11 @@ END$$
 
 DELIMITER ;
 
--------- EJEMPLO DE USO 
-call blue_corner.update_etiquetas(1, 'Limpieza');
+-- ------ EJEMPLO DE USO 
+-- call blue_corner.update_etiquetas(1, 'Limpieza');
 
 
-
----------------- OBTENER PRODUCTO POR ID
-
-USE `blue_corner`;
-DROP procedure IF EXISTS `getProductoById`;
-
-DELIMITER $$
-USE `blue_corner`$$
-CREATE PROCEDURE `getProductoById` (IdProducto INT(11))
-BEGIN
-	SELECT *
-    FROM Productos
-    WHERE Id_producto = IdProducto;
-END$$
-
-DELIMITER ;
-
--------- EJEMPLO DE USO 
-call blue_corner.getProductoById(4);
-
-
----------------- OBTENER ETIQUETAS POR ID
+-- -------------- OBTENER ETIQUETAS POR ID
 
 USE `blue_corner`;
 DROP procedure IF EXISTS `getLabelsById`;
@@ -151,11 +124,11 @@ END$$
 
 DELIMITER ;
 
--------- EJEMPLO DE USO 
-call blue_corner.getLabelsById(1);
+-- ------ EJEMPLO DE USO 
+-- call blue_corner.getLabelsById(1);
 
 
----------------- OBTENER ID DE UN PRODUCTO
+-- -------------- OBTENER ID DE UN PRODUCTO
 
 USE `blue_corner`;
 DROP procedure IF EXISTS `GetIdByName`;
@@ -170,45 +143,5 @@ END$$
 
 DELIMITER ;
 
--------- EJEMPLO DE USO 
-call blue_corner.GetIdByName('Lejía Patito');
-
-
------------------------------------- DATOS DE ENTRADA ---------------------------------
-
-
-
-INSERT INTO Productos(Nombre)
-values("Lejía Patito");
-
-INSERT INTO Productos(Nombre)
-values("Sapolio");
-
-INSERT INTO Productos(Nombre)
-values("Evervess");
-
-INSERT INTO Productos(Nombre)
-values("JW BlackL 1L");
-
-
-
-INSERT INTO Etiquetas(Id_producto, Nombre)
-values(1, "Limpieza");
-INSERT INTO Etiquetas(Id_producto, Nombre)
-values(1, "Hogar");
-INSERT INTO Etiquetas(Id_producto, Nombre)
-values(1, "Quimicos");
-
-
-
-SELECT Nombre 
-FROM Etiquetas 
-WHERE Id_producto = 3;
-
-
-INSERT INTO Etiquetas(Id_producto, Nombre)
-values(5, "Licor");
-INSERT INTO Etiquetas(Id_producto, Nombre)
-values(5, "+18 Años");
-INSERT INTO Etiquetas(Id_producto, Nombre)
-values(5, "Botellas");
+-- ------ EJEMPLO DE USO 
+-- call blue_corner.GetIdByName('Lejía Patito');

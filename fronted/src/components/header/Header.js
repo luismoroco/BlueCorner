@@ -12,9 +12,7 @@ import React from "react";
 
 import './Header.css'
 
-import PropTypes from 'prop-types';
-
-const Header = ({prop}) => {
+const Headert = ({prop}) => {
     return (
         <>
             <h1> { prop } </h1>
@@ -22,8 +20,4 @@ const Header = ({prop}) => {
     );
 };
 
-Header.propTypes = {
-    Header : PropTypes.string.isRequired
-};
-
-export default Header;
+export default Headert;

@@ -7,7 +7,7 @@ describe('Prueba Componente Form', () => {
             expect(x).toEqual('Arroz')
         } catch (e) {}
     }, 5000);
-
+    
     test('Prueba 2', async () => {
         try {
             const x = await Testing('Aceite', 'Comida', 'Grasa', 'Familia', 'Gluten')

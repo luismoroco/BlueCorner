@@ -13,7 +13,7 @@
 
 import React from 'react';
 
-import Header from './components/header/Header';
+import Headert from './components/header/Header';
 import Footer from './components/footer/Footer';
 import Productos from './components/products/Productos';
 import FormProduct from './components/form/form';
@@ -23,7 +23,7 @@ import './App.css'
 function App() {
   return (
     <>  
-        <Header prop = "Productos"/>
+        <Headert prop = {"Productos"}/>
           <FormProduct/> 
           <Productos/>
         <Footer prop = "Prueba Técnica para @BlueCorner Inc."/>

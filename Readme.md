@@ -53,8 +53,9 @@ Ambos se comunican usando `Axios` y peticiones `HTTP`
 
 ### 2. Levantar la base datos
 
-- Ejecutar el script [Script.sql](https://github.com/luismoroco/BlueCorner/blob/main/backend/db/dbModel.sql) preferentemente en MySQL Workbench.
-- Las variables globales estan configuradas por defecto.
+- Ejecutar el script [script](https://github.com/luismoroco/BlueCorner/blob/main/backend/db/dbModel.sql) preferentemente en MySQL Workbench.
+- Debe ir a [env](https://github.com/luismoroco/BlueCorner/blob/main/backend/env/.env) y configurar : El nombre de su servidor local, su usuario y contraseña.
+- Las variable de DB_DATABSE está configurada por defecto.
 
 ### 3. Levantar el servidor del Backend
 

@@ -33,9 +33,9 @@ export const ProductLabel = ({ idProducto }) => {
                 {
                     listEtiquetasProducto.map((e) => {
                         return (
-                            <>
+                            <div key = {e.Nombre}>
                                 { e.Nombre + ' ' } 
-                            </>
+                            </div>
                         );
                     })
                 }

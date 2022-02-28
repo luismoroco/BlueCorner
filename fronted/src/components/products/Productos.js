@@ -41,15 +41,16 @@ export const Productos = ( ) => {
         <>
           <h2> Almacenados </h2>
           <table>
+            <tbody>
               <tr>
-                <th> Producto </th>
-                <th> Etiquetas </th>
-                <th> Accion </th> 
+                <td> Producto </td>
+                <td> Etiquetas </td>
+                <td> Accion </td> 
               </tr>
                       {
                         listProductos.map((e) => {
                           return (
-                            <tr  key = { e.Id_producto }>
+                            <tr key = { e.Id_producto }>
                               <td> { e.Nombre } </td>
                               <td> <ProductLabel idProducto = { e.Id_producto }/> </td>
                               <td> <button onClick = {() => {deleteProducto(e.Id_producto)}} > X </button> </td>
@@ -57,6 +58,7 @@ export const Productos = ( ) => {
                           );
                         })   
                       }
+            </tbody>
           </table>
         </>
     );

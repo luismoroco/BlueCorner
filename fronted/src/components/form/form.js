@@ -50,7 +50,7 @@ export const FormProduct = () => {
 
     return (
         <>  
-            <form onSubmit = { submitProducto }>
+            <form onSubmit = {submitProducto}>
             <p> Nombre </p>
                 <input 
                     type = 'text'
@@ -60,13 +60,14 @@ export const FormProduct = () => {
                     placeholder = 'Red Bull 0.3L'
                     minLength ='2'
                 />
-                <button type = 'submit'> + </button> 
+                <button type = 'submit'> Guardar producto </button> 
             </form>
             
             <p> Etiquetas </p>
             <AddEtiqueta setEtiquetas = { setEtiquetas }/>
                 <br/>
                 <table>
+                    <tbody>
                     <tr>
                         <th> Etiqueta </th>
                         <th> Acción </th>
@@ -81,6 +82,7 @@ export const FormProduct = () => {
                                     );
                                 })
                             }
+                    </tbody>
                 </table>
         </>
     );
