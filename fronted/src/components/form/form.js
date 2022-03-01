@@ -33,15 +33,16 @@ export const FormProduct = () => {
     };
 
     const submitProducto = (e) => {
+        e.preventDefault();
+
         Axios
         .post('http://localhost:5000/endpoint/save', {NameProducto : NameProducto, lisEtiquetas : Etiquetas})
         .then(() => alert('succefull'))
         .catch((err) => {console.error(err)});
         
-        e.preventDefault();
         setNameProducto('');
         setEtiquetas([]);
-        refreshPage();
+        //refreshPage();
     };
 
     const handleInputChangue = (e) => {
@@ -58,7 +59,7 @@ export const FormProduct = () => {
                     onChange = { handleInputChangue }
                     required
                     placeholder = 'Red Bull 0.3L'
-                    minLength ='2'
+                    minLength = '2'
                 />
                 <button type = 'submit'> Guardar producto </button> 
             </form>
