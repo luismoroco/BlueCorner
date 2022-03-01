@@ -33,7 +33,7 @@ export const ProductLabel = ({ idProducto }) => {
                 {
                     listEtiquetasProducto.map((e) => {
                         return (
-                            <div key = {e.Nombre}>
+                            <div style = {{color : 'deepskyblue'}} key = {e.Nombre}>
                                 { e.Nombre + ' ' } 
                             </div>
                         );
