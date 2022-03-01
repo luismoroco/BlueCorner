@@ -20,8 +20,6 @@ import AddEtiqueta from '../labels/AddEtiqueta';
 
 import Axios from 'axios';
 
-import refreshPage from '../../functions/functions';
-
 export const FormProduct = () => {
     const [NameProducto, setNameProducto] = useState('');
     const [Etiquetas, setEtiquetas] = useState([]);
@@ -42,7 +40,6 @@ export const FormProduct = () => {
         
         setNameProducto('');
         setEtiquetas([]);
-        //refreshPage();
     };
 
     const handleInputChangue = (e) => {
