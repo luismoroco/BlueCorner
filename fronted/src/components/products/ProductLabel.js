@@ -25,7 +25,7 @@ export const ProductLabel = ({ idProducto }) => {
       Axios
         .get(`http://localhost:5000/endpoint/getLabels/${idProducto}`)
         .then((response) => {setListEtiquetasProducto(response.data)});
-    }, []);
+    }, [listEtiquetasProducto]);
 
     return (
         <>
