@@ -4,6 +4,12 @@
 
 ![Relacion](docs/db.png)
 
+# Compatibilidad 
+
+- Brave Browser 
+- Google Chrome
+- Firefox
+
 ## Desarrollador
 
 - Luis Angel Moroco Ramos
